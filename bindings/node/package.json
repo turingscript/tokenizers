@@ -134,5 +134,9 @@
     "singleQuote": true,
     "arrowParens": "always"
   },
-  "packageManager": "yarn@3.5.1"
+  "packageManager": "yarn@3.5.1",
+  "volta": {
+    "node": "20.11.1",
+    "yarn": "3.5.1"
+  }
 }
