@@ -1,9 +1,7 @@
 name: Node Release
 
 env:
-  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-  AWS_DEFAULT_REGION: us-east-1
+  NODE_VERSION: 20
 
 on:
   push:
@@ -48,7 +46,7 @@ jobs:
       - name: Install Node ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
-          node-version: latest
+          node-version: ${{ env.NODE_VERSION }}
           cache: yarn
           cache-dependency-path: ./bindings/node/
 
