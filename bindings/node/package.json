@@ -1,14 +1,14 @@
 {
-  "name": "tokenizers",
+  "name": "@turingscript/tokenizers",
   "version": "0.14.0-dev0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/huggingface/tokenizers.git"
+    "url": "git+https://github.com/turingscript/tokenizers.git"
   },
   "bugs": {
-    "url": "https://github.com/huggingface/tokenizers/issues"
+    "url": "https://github.com/turingscript/tokenizers/issues"
   },
-  "homepage": "https://github.com/huggingface/tokenizers/tree/master/bindings/node",
+  "homepage": "https://github.com/turingscript/tokenizers/tree/master/bindings/node",
   "author": "Anthony MOI <m.anthony.moi@gmail.com>",
   "license": "Apache-2.0",
   "description": "Provides an implementation of today's most used tokenizers, with a focus on performances and versatility.",
@@ -51,6 +51,7 @@
         "i686-pc-windows-msvc",
         "armv7-unknown-linux-gnueabihf",
         "aarch64-apple-darwin",
+        "arm64-apple-darwin",
         "aarch64-linux-android",
         "x86_64-unknown-freebsd",
         "aarch64-unknown-linux-musl",
