@@ -37,7 +37,7 @@ switch (platform) {
           if (localFileExisted) {
             nativeBinding = require('./tokenizers.android-arm64.node')
           } else {
-            nativeBinding = require('tokenizers-android-arm64')
+            nativeBinding = require('@turingscript/tokenizers-android-arm64')
           }
         } catch (e) {
           loadError = e
@@ -49,7 +49,7 @@ switch (platform) {
           if (localFileExisted) {
             nativeBinding = require('./tokenizers.android-arm-eabi.node')
           } else {
-            nativeBinding = require('tokenizers-android-arm-eabi')
+            nativeBinding = require('@turingscript/tokenizers-android-arm-eabi')
           }
         } catch (e) {
           loadError = e
@@ -67,7 +67,7 @@ switch (platform) {
           if (localFileExisted) {
             nativeBinding = require('./tokenizers.win32-x64-msvc.node')
           } else {
-            nativeBinding = require('tokenizers-win32-x64-msvc')
+            nativeBinding = require('@turingscript/tokenizers-win32-x64-msvc')
           }
         } catch (e) {
           loadError = e
@@ -79,7 +79,7 @@ switch (platform) {
           if (localFileExisted) {
             nativeBinding = require('./tokenizers.win32-ia32-msvc.node')
           } else {
-            nativeBinding = require('tokenizers-win32-ia32-msvc')
+            nativeBinding = require('@turingscript/tokenizers-win32-ia32-msvc')
           }
         } catch (e) {
           loadError = e
@@ -91,7 +91,7 @@ switch (platform) {
           if (localFileExisted) {
             nativeBinding = require('./tokenizers.win32-arm64-msvc.node')
           } else {
-            nativeBinding = require('tokenizers-win32-arm64-msvc')
+            nativeBinding = require('@turingscript/tokenizers-win32-arm64-msvc')
           }
         } catch (e) {
           loadError = e
@@ -107,7 +107,7 @@ switch (platform) {
       if (localFileExisted) {
         nativeBinding = require('./tokenizers.darwin-universal.node')
       } else {
-        nativeBinding = require('tokenizers-darwin-universal')
+        nativeBinding = require('@turingscript/tokenizers-darwin-universal')
       }
       break
     } catch {}
@@ -118,7 +118,7 @@ switch (platform) {
           if (localFileExisted) {
             nativeBinding = require('./tokenizers.darwin-x64.node')
           } else {
-            nativeBinding = require('tokenizers-darwin-x64')
+            nativeBinding = require('@turingscript/tokenizers-darwin-x64')
           }
         } catch (e) {
           loadError = e
@@ -130,7 +130,7 @@ switch (platform) {
           if (localFileExisted) {
             nativeBinding = require('./tokenizers.darwin-arm64.node')
           } else {
-            nativeBinding = require('tokenizers-darwin-arm64')
+            nativeBinding = require('@turingscript/tokenizers-darwin-arm64')
           }
         } catch (e) {
           loadError = e
@@ -149,7 +149,7 @@ switch (platform) {
       if (localFileExisted) {
         nativeBinding = require('./tokenizers.freebsd-x64.node')
       } else {
-        nativeBinding = require('tokenizers-freebsd-x64')
+        nativeBinding = require('@turingscript/tokenizers-freebsd-x64')
       }
     } catch (e) {
       loadError = e
@@ -164,7 +164,7 @@ switch (platform) {
             if (localFileExisted) {
               nativeBinding = require('./tokenizers.linux-x64-musl.node')
             } else {
-              nativeBinding = require('tokenizers-linux-x64-musl')
+              nativeBinding = require('@turingscript/tokenizers-linux-x64-musl')
             }
           } catch (e) {
             loadError = e
@@ -175,7 +175,7 @@ switch (platform) {
             if (localFileExisted) {
               nativeBinding = require('./tokenizers.linux-x64-gnu.node')
             } else {
-              nativeBinding = require('tokenizers-linux-x64-gnu')
+              nativeBinding = require('@turingscript/tokenizers-linux-x64-gnu')
             }
           } catch (e) {
             loadError = e
@@ -189,7 +189,7 @@ switch (platform) {
             if (localFileExisted) {
               nativeBinding = require('./tokenizers.linux-arm64-musl.node')
             } else {
-              nativeBinding = require('tokenizers-linux-arm64-musl')
+              nativeBinding = require('@turingscript/tokenizers-linux-arm64-musl')
             }
           } catch (e) {
             loadError = e
@@ -200,7 +200,7 @@ switch (platform) {
             if (localFileExisted) {
               nativeBinding = require('./tokenizers.linux-arm64-gnu.node')
             } else {
-              nativeBinding = require('tokenizers-linux-arm64-gnu')
+              nativeBinding = require('@turingscript/tokenizers-linux-arm64-gnu')
             }
           } catch (e) {
             loadError = e
@@ -213,7 +213,7 @@ switch (platform) {
           if (localFileExisted) {
             nativeBinding = require('./tokenizers.linux-arm-gnueabihf.node')
           } else {
-            nativeBinding = require('tokenizers-linux-arm-gnueabihf')
+            nativeBinding = require('@turingscript/tokenizers-linux-arm-gnueabihf')
           }
         } catch (e) {
           loadError = e
