@@ -99,11 +99,26 @@ jobs:
         working-directory: ./bindings/node
         run: ls -R ./npm
         shell: bash
+
+      - name: List files 
+        working-directory: ./bindings/node
+        run: ls -la
+        shell: bash
+      
+      - name: Package Library for Publish
+        id: package
+        working-directory: ./bindings/node
+        run: |
+          version=$(echo "${{github.ref}}" | sed 's/refs\/tags\/node-v//g')
+          echo "version=${version}"
+          npm version $version -m "build(version): Bump version to %s"
+          npm pack
+          echo "version=$version" >> "$GITHUB_OUTPUT"
     
       - name: Publish
         working-directory: ./bindings/node
-        run: |
-          echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
-          npm publish --access public --tag next
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          VERSION: ${{ steps.package.outputs.version }}
+        run: |
+          npm set //registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}
+          npm publish turingscript-tokenizers-${VERSION}.tgz --access public
