@@ -1,7 +1,7 @@
 name: Node Release
 
 env:
-  NODE_VERSION: 20
+  NODE_VERSION: 18
 
 on:
   push:
