@@ -43,7 +43,7 @@ jobs:
           path: ~/.cargo/registry
           key: ${{ runner.os }}-cargo-registry-${{ hashFiles('**/Cargo.toml') }}
 
-      - name: Install Node ${{ matrix.node-version }}
+      - name: Install Node ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
@@ -60,16 +60,13 @@ jobs:
           yarn build &&
           strip -x *.node
 
-      - name: Install Python
-        uses: actions/setup-python@v1
-        with:
-          python-version: 3.x
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: bindings-${{ matrix.settings.target }}
-          path: ${{ env.APP_NAME }}bindings/node/*.node
+          path: ./bindings/node/*.node
           if-no-files-found: error
+
   publish:
     name: Publish
     runs-on: ubuntu-latest
