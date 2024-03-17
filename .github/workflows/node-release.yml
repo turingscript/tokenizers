@@ -21,7 +21,7 @@ jobs:
             target: x86_64-pc-windows-msvc
           - host: ubuntu-latest
             target: x86_64-unknown-linux-gnu
-          - host: flyci-macos-large-latest-m2
+          - host: flyci-macos-14-m2
             target: arm64-apple-darwin
     runs-on: ${{ matrix.settings.host }}
     steps:
@@ -74,27 +74,32 @@ jobs:
       - build
     steps:
       - uses: actions/checkout@v4
+
       - name: Setup node
         uses: actions/setup-node@v4
         with:
-          node-version: latest
-          check-latest: true
-          cache: yarn
+          node-version: ${{ env.NODE_VERSION }}
           cache-dependency-path: ./bindings/node/
+          cache: yarn
+
       - name: Install dependencies
         working-directory: ./bindings/node
         run: yarn install
+
       - name: Download all artifacts
         uses: actions/download-artifact@v4
         with:
           path: ./bindings/node/artifacts
+
       - name: Move artifacts
         working-directory: ./bindings/node
         run: yarn artifacts
+
       - name: List packages
         working-directory: ./bindings/node
         run: ls -R ./npm
         shell: bash
+    
       - name: Publish
         working-directory: ./bindings/node
         run: |
