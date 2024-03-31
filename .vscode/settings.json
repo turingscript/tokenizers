@@ -1,4 +1,4 @@
 {
     "rust-analyzer.procMacro.ignored": { "napi-derive": ["napi"] },
-    "jest.autoRun": "on-demand"
+    "jest.runMode": "on-demand"
 }
