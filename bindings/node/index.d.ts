@@ -144,7 +144,7 @@ export interface JsFromPretrainedParameters {
 export interface BpeTrainerOptions {
   specialTokens: Array<string>
 }
-export function bpeTrainer(options: BpeTrainerOptions): void
+export function bpeTrainer(options: BpeTrainerOptions): Trainer
 export function slice(s: string, beginIndex?: number | undefined | null, endIndex?: number | undefined | null): string
 export function mergeEncodings(encodings: Array<Encoding>, growingOffsets?: boolean | undefined | null): Encoding
 /** Decoder */

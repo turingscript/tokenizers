@@ -73,7 +73,7 @@ pub struct BpeTrainerOptions {
 }
 
 #[napi]
-pub fn bpe_trainer(options: BpeTrainerOptions) {
+pub fn bpe_trainer(options: BpeTrainerOptions) -> Trainer{
 
   let special_tokens = options.special_tokens
   .iter()
@@ -84,5 +84,5 @@ pub fn bpe_trainer(options: BpeTrainerOptions) {
   .special_tokens(special_tokens)
   .build();
 
-  TrainerWrapper::BpeTrainer(bpe_trainer);
+  return Trainer::from(TrainerWrapper::BpeTrainer(bpe_trainer));
 }
