@@ -141,6 +141,10 @@ export interface JsFromPretrainedParameters {
   revision?: string
   authToken?: string
 }
+export interface BpeTrainerOptions {
+  specialTokens: Array<string>
+}
+export function bpeTrainer(options: BpeTrainerOptions): void
 export function slice(s: string, beginIndex?: number | undefined | null, endIndex?: number | undefined | null): string
 export function mergeEncodings(encodings: Array<Encoding>, growingOffsets?: boolean | undefined | null): Encoding
 /** Decoder */
