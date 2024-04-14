@@ -13,3 +13,4 @@ pub mod tasks;
 pub mod tokenizer;
 pub mod trainers;
 pub mod utils;
+pub mod bpe_trainers;

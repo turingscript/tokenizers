@@ -290,9 +290,10 @@ const {
   AddedToken,
   Tokenizer,
   Trainer,
-  bpeTrainer,
   slice,
   mergeEncodings,
+  Trainer2,
+  bpeTrainer,
 } = nativeBinding
 
 module.exports.Decoder = Decoder
@@ -350,6 +351,7 @@ module.exports.PaddingDirection = PaddingDirection
 module.exports.AddedToken = AddedToken
 module.exports.Tokenizer = Tokenizer
 module.exports.Trainer = Trainer
-module.exports.bpeTrainer = bpeTrainer
 module.exports.slice = slice
 module.exports.mergeEncodings = mergeEncodings
+module.exports.Trainer2 = Trainer2
+module.exports.bpeTrainer = bpeTrainer
