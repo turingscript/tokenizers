@@ -1,10 +1,8 @@
 use crate::models::Model;
 use napi_derive::napi;
-use tk::AddedToken;
 use std::sync::{Arc, RwLock};
 use tokenizers as tk;
 use tokenizers::models::TrainerWrapper;
-use tokenizers::models::bpe::trainer::BpeTrainer;
 
 #[napi]
 pub struct Trainer {
@@ -65,24 +63,4 @@ impl tk::Trainer for Trainer {
       .unwrap()
       .feed(iterator, process)
   }
-}
-
-#[napi(object)]
-pub struct BpeTrainerOptions {
-  pub special_tokens: Vec<String>,
-}
-
-#[napi]
-pub fn bpe_trainer(options: BpeTrainerOptions) -> Trainer{
-
-  let special_tokens = options.special_tokens
-  .iter()
-  .map(|token| AddedToken::from(token, true))
-  .collect::<Vec<AddedToken>>();
-
-  let bpe_trainer = BpeTrainer::builder()
-  .special_tokens(special_tokens)
-  .build();
-
-  return Trainer::from(TrainerWrapper::BpeTrainer(bpe_trainer));
 }
