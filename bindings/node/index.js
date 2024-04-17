@@ -292,6 +292,8 @@ const {
   Trainer,
   slice,
   mergeEncodings,
+  Trainer2,
+  bpeTrainer,
 } = nativeBinding
 
 module.exports.Decoder = Decoder
@@ -351,3 +353,5 @@ module.exports.Tokenizer = Tokenizer
 module.exports.Trainer = Trainer
 module.exports.slice = slice
 module.exports.mergeEncodings = mergeEncodings
+module.exports.Trainer2 = Trainer2
+module.exports.bpeTrainer = bpeTrainer

@@ -143,6 +143,10 @@ export interface JsFromPretrainedParameters {
 }
 export function slice(s: string, beginIndex?: number | undefined | null, endIndex?: number | undefined | null): string
 export function mergeEncodings(encodings: Array<Encoding>, growingOffsets?: boolean | undefined | null): Encoding
+export interface BpeTrainerOptions {
+  specialTokens?: Array<string>
+}
+export function bpeTrainer(options?: BpeTrainerOptions | undefined | null)
 /** Decoder */
 export class Decoder {
   decode(tokens: Array<string>): string
@@ -251,3 +255,8 @@ export class Tokenizer {
   ): Encoding
 }
 export class Trainer {}
+export type JsTrainer = Trainer2
+export class Trainer2 {
+  constructor()
+  shouldShowProgress(): boolean
+}
